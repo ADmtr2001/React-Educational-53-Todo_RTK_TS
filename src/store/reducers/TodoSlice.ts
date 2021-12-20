@@ -35,7 +35,7 @@ const todoSlice = createSlice({
     toggleTodo(state, action: PayloadAction<number>) {
       state.todos = state.todos.map(todo => {
         if (todo.id === action.payload) {
-          return {...todo, completed: todo.completed};
+          return {...todo, completed: !todo.completed};
         }
         return  todo;
       });
@@ -51,5 +51,6 @@ export const {
   removeTodo,
   todoFetchingError,
   todoFetching,
-  todoFetchingSuccess
+  todoFetchingSuccess,
+  toggleTodo
 } = todoSlice.actions;

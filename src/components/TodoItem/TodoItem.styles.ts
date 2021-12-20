@@ -6,6 +6,7 @@ interface TodoItemStylesProps {
 
 export const Wrapper = styled.div<TodoItemStylesProps>`
   text-decoration: ${(props) => props.completed ? 'line-through' : ''};
+  background-color: ${(props) => props.completed ? 'aliceblue' : ''};
   border: 2px solid black;
   text-align: center;
   padding: 5px;

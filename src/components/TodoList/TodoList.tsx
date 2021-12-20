@@ -11,8 +11,8 @@ const TodoList: FC<TodoListProps> = ({todos}) => {
   return (
     <Wrapper>
       <ul>
-        {todos.map(todo => (
-          <TodoItem key={todo.id} todo={todo}/>
+        {todos.map((todo, index) => (
+          <TodoItem key={todo.id} number={index + 1} todo={todo}/>
         ))}
       </ul>
     </Wrapper>
