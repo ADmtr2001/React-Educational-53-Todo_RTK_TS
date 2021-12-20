@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.nav`
-  background-color: lightgray;
+  background-color: aliceblue;
   min-height: 50px;
   display: flex;
   justify-content: center;
@@ -9,8 +9,7 @@ export const Wrapper = styled.nav`
   
   a {
     margin: 5px;
-    background: black;
-    color: white;
+    background: lightblue;
     width: 100px;
     height: 30px;
     

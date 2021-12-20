@@ -9,8 +9,6 @@ import Main from "./pages/Main";
 
 const App: FC = () => {
   const dispatch = useAppDispatch();
-  const {todos} = useAppSelector(state => state.todo);
-  console.log(todos);
   useEffect(() => {
     dispatch(fetchUsers());
   }, []);
