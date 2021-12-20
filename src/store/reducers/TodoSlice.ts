@@ -31,7 +31,15 @@ const todoSlice = createSlice({
     },
     removeAllTodo(state) {
       state.todos = [];
-    }
+    },
+    toggleTodo(state, action: PayloadAction<number>) {
+      state.todos = state.todos.map(todo => {
+        if (todo.id === action.payload) {
+          return {...todo, completed: todo.completed};
+        }
+        return  todo;
+      });
+    },
   },
   extraReducers: {}
 });
