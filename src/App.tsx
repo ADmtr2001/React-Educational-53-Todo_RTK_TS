@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect} from 'react';
+import {fetchUsers} from "./store/action-creators/Todo";
+import {useAppDispatch} from "./hooks/useAppDispatch";
+import {useAppSelector} from "./hooks/useAppSelector";
 
-function App() {
+const App = () => {
+  const dispatch = useAppDispatch();
+  const {todos} = useAppSelector(state => state.todo);
+  console.log(todos);
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      App
     </div>
   );
-}
+};
 
 export default App;
