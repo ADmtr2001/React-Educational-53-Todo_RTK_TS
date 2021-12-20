@@ -10,6 +10,7 @@ export const Wrapper = styled.div<TodoItemStylesProps>`
   text-align: center;
   padding: 5px;
   margin-top: 5px;
+  width: 100%;
   
   button {
     margin-top: 5px;
