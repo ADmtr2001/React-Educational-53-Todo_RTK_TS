@@ -11,6 +11,22 @@ export const Wrapper = styled.div<TodoItemStylesProps>`
   padding: 5px;
   margin-top: 5px;
   
+  button {
+    margin-top: 5px;
+    width: 100px;
+    height: 30px;
+    background: lightblue;
+    border: none;
+    text-transform: capitalize;
+    cursor: pointer;
+    font-weight: bold;
+    
+    :hover {
+      background: cornflowerblue;
+      color: white;
+    }
+  }
+  
   :hover {
     background: aliceblue;
     cursor: pointer;
