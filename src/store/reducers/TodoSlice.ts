@@ -17,7 +17,7 @@ const todoSlice = createSlice({
     todoFetchingSuccess(state, action: PayloadAction<ITodo[]>) {
       state.isLoading = false;
       state.error = null;
-      state.todos.unshift(...action.payload);
+      state.todos = action.payload;
     },
     todoFetchingError(state, action: PayloadAction<string>) {
       state.isLoading = false;
