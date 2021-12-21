@@ -6,6 +6,7 @@ import Navbar from './components/UI/Navbar';
 import {Route, Routes, Navigate} from "react-router";
 import Login from "./pages/Login";
 import Main from "./pages/Main";
+import AppRouter from "./components/AppRouter";
 
 const App: FC = () => {
   const dispatch = useAppDispatch();
@@ -16,11 +17,7 @@ const App: FC = () => {
   return (
     <React.Fragment>
       <Navbar/>
-      <Routes>
-        <Route path='login' element={<Login/>}/>
-        <Route path='main' element={<Main/>}/>
-        <Route path='*' element={<Navigate to='/login'/>}/>
-      </Routes>
+      <AppRouter/>
     </React.Fragment>
   );
 };

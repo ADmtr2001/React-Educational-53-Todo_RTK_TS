@@ -8,4 +8,5 @@ export interface TodoState {
   todos: ITodo[];
   isLoading: boolean;
   error: string | null;
+  login: boolean;
 }

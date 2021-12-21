@@ -5,6 +5,7 @@ const initialState: TodoState = {
   todos: [],
   isLoading: false,
   error: null,
+  login: false,
 }
 
 const todoSlice = createSlice({
@@ -40,6 +41,9 @@ const todoSlice = createSlice({
         return  todo;
       });
     },
+    setLogin(state, action: PayloadAction<boolean>) {
+      state.login = action.payload;
+    }
   },
   extraReducers: {}
 });
@@ -52,5 +56,6 @@ export const {
   todoFetchingError,
   todoFetching,
   todoFetchingSuccess,
-  toggleTodo
+  toggleTodo,
+  setLogin
 } = todoSlice.actions;
