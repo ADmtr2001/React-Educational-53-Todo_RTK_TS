@@ -1,5 +1,6 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {ITodo, TodoState} from "../../types/ITodo";
+import {fetchTodos} from "../action-creators/Todo";
 
 const initialState: TodoState = {
   todos: [],
@@ -45,7 +46,28 @@ const todoSlice = createSlice({
       state.login = action.payload;
     }
   },
-  extraReducers: {}
+  extraReducers: {
+    [fetchTodos.fulfilled.type]: (
+      state: TodoState,
+      action: PayloadAction<ITodo[]>
+    ) => {
+      state.isLoading = false;
+      state.error = null;
+      state.todos = action.payload;
+    },
+    [fetchTodos.pending.type]: (
+      state: TodoState,
+    ) => {
+      state.isLoading = true;
+    },
+    [fetchTodos.rejected.type]: (
+      state: TodoState,
+      action: PayloadAction<string>
+    ) => {
+      state.isLoading = false;
+      state.error = action.payload;
+    }
+  }
 });
 
 export default todoSlice.reducer;

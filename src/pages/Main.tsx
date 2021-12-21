@@ -4,7 +4,7 @@ import TodoList from "../components/TodoList/TodoList";
 import {useAppSelector} from "../hooks/useAppSelector";
 import {useAppDispatch} from "../hooks/useAppDispatch";
 import {addTodo, removeAllTodo} from "../store/reducers/TodoSlice";
-import {fetchUsers} from "../store/action-creators/Todo";
+import {fetchTodos} from "../store/action-creators/Todo";
 import AddForm from "../components/AddForm/AddForm";
 import {ITodo} from "../types/ITodo";
 
@@ -22,7 +22,7 @@ const Main: FC = () => {
       <AddForm handleSubmit={handleSubmit}/>
       <div className='buttons'>
         <button onClick={() => dispatch(removeAllTodo())}>Remove All</button>
-        <button onClick={() => dispatch(fetchUsers())}>Fetch Todos</button>
+        <button onClick={() => dispatch(fetchTodos())}>Fetch Todos</button>
       </div>
       <TodoList todos={todos}/>
     </Wrapper>
